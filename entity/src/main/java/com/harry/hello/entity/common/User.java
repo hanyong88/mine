@@ -123,4 +123,21 @@ public class User  implements Serializable {
     public void setLogtime(Date logtime) {
         this.logtime = logtime;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", birthday=" + birthday +
+                ", address='" + address + '\'' +
+                ", tel=" + tel +
+                ", company='" + company + '\'' +
+                ", job='" + job + '\'' +
+                ", description='" + description + '\'' +
+                ", regtime=" + regtime +
+                ", logtime=" + logtime +
+                '}';
+    }
 }

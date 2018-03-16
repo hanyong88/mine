@@ -18,8 +18,8 @@ public class TestRole extends BaseCase {
     @Test
     public void testQueryByUser(){
         int userId = 2;
-        PageInfo<Role> pageInfo = roleService.queryByUser(userId);
-        for(Role role : pageInfo.getList()){
+        List<Role> list = roleService.queryByUser(userId);
+        for(Role role : list){
             LogUtil.LOGGER.info(role.toString());
         }
     }

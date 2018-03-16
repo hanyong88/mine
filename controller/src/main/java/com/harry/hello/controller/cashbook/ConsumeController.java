@@ -5,6 +5,8 @@ import com.harry.hello.cashbook.service.ConsumeService;
 import com.harry.hello.common.utils.JsonResult;
 import com.harry.hello.controller.common.BaseController;
 import com.harry.hello.entity.cashbook.Consume;
+import com.harry.hello.entity.common.User;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,9 +21,12 @@ public class ConsumeController extends BaseController{
     @Resource
     private ConsumeService consumeService;
 
+    @SuppressWarnings("Duplicates")
     @RequestMapping("add")
     public JsonResult add(@Valid Consume consume, BindingResult bindingResult){
         validate(bindingResult);
+        User user = (User) SecurityUtils.getSubject().getPrincipal();
+        consume.setUserId(user.getId());
         consumeService.add(consume);
         return new JsonResult(true);
     }
@@ -52,8 +57,9 @@ public class ConsumeController extends BaseController{
     }
 
     @RequestMapping("user/list")
-    public JsonResult listByUser(Integer userId, Integer start, Integer size){
-        PageInfo<Consume> pageInfo = consumeService.listByUser(userId,start,size);
+    public JsonResult listByUser(Integer start, Integer size){
+        User user = (User) SecurityUtils.getSubject().getPrincipal();
+        PageInfo<Consume> pageInfo = consumeService.listByUser(user.getId(),start,size);
         return new JsonResult(pageInfo);
     }
 

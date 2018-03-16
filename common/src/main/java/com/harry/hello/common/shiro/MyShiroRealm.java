@@ -56,6 +56,7 @@ public class MyShiroRealm extends AuthorizingRealm {
         //检查token的信息
         System.out.println(token.getCredentials());
         User user = userService.getByUsername(username);
+        LogUtil.LOGGER.info("用户信息:" + user);
         //更新登录时间
         if (user==null){
             return null;

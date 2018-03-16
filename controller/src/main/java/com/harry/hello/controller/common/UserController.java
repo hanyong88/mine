@@ -44,6 +44,7 @@ public class UserController extends BaseController{
 
         //创建subject实例
         Subject subject = SecurityUtils.getSubject();
+        LogUtil.LOGGER.info("登录用户名：" + username + "，密码：" + password);
         //判断当前的subject是否登录
         if(subject.isAuthenticated() == true){
             return new JsonResult(JsonResult.SUCCESS,"已登录","success");
