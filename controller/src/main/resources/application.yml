@@ -8,7 +8,7 @@ spring:
         name: test
         url: jdbc:mysql://rm-wz9ntbz4289l3iec0io.mysql.rds.aliyuncs.com:3306/hello?useSSL=false&characterEncoding=utf8
         username: root
-        password:
+        password: Hyok@3603
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
