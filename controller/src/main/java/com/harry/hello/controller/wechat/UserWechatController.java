@@ -20,7 +20,7 @@ public class UserWechatController {
     @RequestMapping("login")
     public JsonResult login(String code, UserWechat userWechat){
         userWechatService.login(code,userWechat);
-        return null;
+        return new JsonResult(true);
     }
 
 

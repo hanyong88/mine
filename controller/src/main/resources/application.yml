@@ -44,3 +44,8 @@ mybatis:
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
+
+wechat:
+  littleApp:
+    appID: wxd9127e2f9e5ebbd5
+    appSecret: cb8c90f91379f4cb2c34da8980dcb8e3

@@ -17,9 +17,9 @@ public class UserWechatServiceImpl implements UserWechatService {
 
     private String loginUrl = "https://api.weixin.qq.com/sns/jscode2session";
 
-    @Value("${appID}")
+    @Value("${wechat.littleApp.appID}")
     private String appID;
-    @Value("${appSecret}")
+    @Value("${wechat.littleApp.appSecret}")
     private String appSecret;
 
     @Override
