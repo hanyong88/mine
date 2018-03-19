@@ -11,6 +11,7 @@
         <module name="controller" />
         <module name="entity" />
         <module name="mapper" />
+        <module name="wechat" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +21,7 @@
       <module name="entity" target="1.8" />
       <module name="mapper" target="1.8" />
       <module name="mine" target="1.8" />
+      <module name="wechat" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

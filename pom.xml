@@ -14,6 +14,7 @@
         <module>controller</module>
         <module>common</module>
         <module>cashbook</module>
+        <module>wechat</module>
     </modules>
 
     <properties>
@@ -133,6 +134,12 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.6</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+
 
         <!-- ehcache 相关依赖  -->
         <dependency>
